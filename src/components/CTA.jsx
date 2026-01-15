@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { track } from "../utils/analytics";
 
 export default function CTA() {
-  const CV_URL = "../../public/cv/Toghrul Zulfaliyev - en son.pdf";
+  const CV_URL = "/cv/Toghrul Zulfaliyev - en son.pdf";
   const CV_PAGES = 1;
 
   return (
