@@ -4,7 +4,7 @@ export const certificates = [
     title: "Frontend Developer (React) Certificate",
     platform: "HackerRank",
     year: "2025",
-    image: "../../public/certificates/diplommm.png",
+    image: "/certificates/diplommm.png",
     link: "https://www.hackerrank.com/certificates/1a0523554e28"
   },
   {
@@ -12,7 +12,7 @@ export const certificates = [
     title: "Frontend Development Certificate",
     platform: "Step IT Academy",
     year: "2023",
-    image: "/public/certificates/diplomastep.png",
-    link: ""
+    image: "/certificates/diplomastep.png",
+    link: "/certificates/diplomastep.png"
   }
 ];
