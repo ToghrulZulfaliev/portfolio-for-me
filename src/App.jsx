@@ -20,12 +20,8 @@ export default function App() {
 
   return (
     <>
-      {/* ✅ Qəşəng arxa fon (intro + home) */}
       <BackgroundFX />
-
-      {/* ✅ Scroll xətti yalnız Home-da */}
       {!showIntro && <ScrollProgress />}
-
       {showIntro ? <IntroScreen /> : <Home />}
     </>
   );
