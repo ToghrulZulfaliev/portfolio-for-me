@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import useTilt from "../../hooks/useTilt";
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, onOpen }) {
   const { ref, onMouseMove, onMouseLeave, onMouseEnter } = useTilt({
     max: 12,
     perspective: 900,
@@ -14,10 +14,15 @@ export default function ProjectCard({ project }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
       transition={{ duration: 0.5 }}
-      className="relative"
+      className="relative group"
+      onClick={() => onOpen?.(project)}  // ✅ kart click -> modal
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => e.key === "Enter" && onOpen?.(project)}
     >
-      {/* glow layer */}
-      <div className="pointer-events-none absolute -inset-1 rounded-3xl opacity-0 blur-2xl transition duration-300
+      {/* glow */}
+      <div
+        className="pointer-events-none absolute -inset-1 rounded-3xl opacity-0 blur-2xl transition duration-300
         bg-gradient-to-r from-indigo-500/30 via-emerald-400/20 to-pink-500/20
         group-hover:opacity-100"
       />
@@ -27,7 +32,7 @@ export default function ProjectCard({ project }) {
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
         onMouseEnter={onMouseEnter}
-        className="group relative rounded-3xl border overflow-hidden transition duration-300
+        className="relative rounded-3xl border overflow-hidden transition duration-300
           border-zinc-200 dark:border-zinc-800
           bg-white/70 dark:bg-zinc-900/60 backdrop-blur
           hover:border-indigo-400/60 dark:hover:border-indigo-400/40"
@@ -38,7 +43,7 @@ export default function ProjectCard({ project }) {
       >
         {/* image */}
         {project.image && (
-          <div className="relative h-44 w-full overflow-hidden">
+          <div className="relative h-52 sm:h-56 w-full overflow-hidden">
             <img
               src={project.image}
               alt={project.title}
@@ -49,8 +54,8 @@ export default function ProjectCard({ project }) {
           </div>
         )}
 
-        <div className="p-6">
-          <h3 className="text-xl font-semibold tracking-tight">
+        <div className="p-4 sm:p-6">
+          <h3 className="text-lg sm:text-xl font-semibold tracking-tight">
             {project.title}
           </h3>
 
@@ -77,13 +82,14 @@ export default function ProjectCard({ project }) {
           )}
 
           {/* actions */}
-          <div className="mt-6 flex gap-3">
+          <div className="mt-6 flex flex-col sm:flex-row gap-3">
             {project.live && (
               <a
                 href={project.live}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-xl bg-indigo-500 px-4 py-2 text-sm font-medium text-white
+                onClick={(e) => e.stopPropagation()} // ✅ modal blok
+                className="w-full sm:w-auto text-center rounded-xl bg-indigo-500 px-4 py-2 text-sm font-medium text-white
                   hover:bg-indigo-600 transition"
               >
                 Live
@@ -95,7 +101,8 @@ export default function ProjectCard({ project }) {
                 href={project.github}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-xl border px-4 py-2 text-sm font-medium
+                onClick={(e) => e.stopPropagation()} // ✅ modal blok
+                className="w-full sm:w-auto text-center rounded-xl border px-4 py-2 text-sm font-medium
                   border-zinc-300 dark:border-zinc-700
                   hover:border-indigo-400 dark:hover:border-indigo-400
                   transition"

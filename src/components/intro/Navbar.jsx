@@ -10,7 +10,7 @@ export default function Navbar() {
 
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // mobil menu açıqdırsa, scrollu bağlamaq (optional, premium hiss)
+  // mobil menu açıqdırsa scrollu bağla
   useEffect(() => {
     if (mobileOpen) document.body.style.overflow = "hidden";
     else document.body.style.overflow = "";
@@ -35,7 +35,8 @@ export default function Navbar() {
     >
       <div
         className={[
-          "mx-auto max-w-6xl px-4 flex items-center justify-between transition-all",
+          // ✅ min-w-0 truncate üçün vacibdir
+          "mx-auto max-w-6xl px-4 flex items-center justify-between transition-all min-w-0",
           scrolled ? "h-14" : "h-16",
         ].join(" ")}
       >
@@ -43,7 +44,7 @@ export default function Navbar() {
         <motion.button
           type="button"
           onClick={goTop}
-          className="group font-semibold tracking-wide text-lg cursor-pointer select-none"
+          className="group font-semibold tracking-wide text-lg cursor-pointer select-none min-w-0"
           initial={{ opacity: 0, rotate: -360, y: -20, scale: 0.6 }}
           animate={
             introDone
@@ -53,17 +54,28 @@ export default function Navbar() {
           transition={{ duration: 1.2, ease: "easeInOut" }}
           whileHover={{ scale: scrolled ? 1.02 : 1.03 }}
         >
-          <span className="relative inline-flex items-center">
+          {/* ✅ max-width + truncate */}
+          <span className="relative inline-flex items-center max-w-[65vw] sm:max-w-none min-w-0">
             {/* glow */}
             <span className="absolute -inset-2 rounded-2xl bg-indigo-500/0 blur-xl transition group-hover:bg-indigo-500/20" />
-            <span className="relative">
-              Toghrul Zulfaliyev<span className="text-indigo-500">.</span>
+
+            <span className="relative truncate">
+              {/* ✅ Mobile short */}
+              <span className="sm:hidden">
+                Toghrul<span className="text-indigo-500">.</span>
+              </span>
+
+              {/* ✅ Desktop full */}
+              <span className="hidden sm:inline">
+                Toghrul Zulfaliyev<span className="text-indigo-500">.</span>
+              </span>
             </span>
           </span>
         </motion.button>
 
-        {/* DESKTOP NAV */}
-        <div className="flex items-center gap-4">
+        {/* RIGHT SIDE */}
+        <div className="flex items-center gap-4 shrink-0">
+          {/* DESKTOP NAV */}
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a
               className="relative hover:text-indigo-500 transition after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-indigo-500 after:transition-all hover:after:w-full"
