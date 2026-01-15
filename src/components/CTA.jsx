@@ -3,7 +3,7 @@ import { track } from "../utils/analytics";
 
 export default function CTA() {
   const CV_URL = "/cv/Toghrul Zulfaliyev - en son.pdf";
-  const CV_PAGES = 1;
+  const CV_PAGES = 2;
 
   return (
     <section className="mx-auto max-w-6xl px-4 pb-16 sm:pb-20 md:pb-24">
