@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import me from "../../photo/ownphoto.jpg";
+import me from "../../photo/gbt.jpeg";
 
 export default function Hero() {
   return (
