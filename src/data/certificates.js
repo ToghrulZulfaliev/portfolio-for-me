@@ -13,7 +13,7 @@ export const certificates = [
     id: 2,
     title: "Frontend Development Certificate",
     platform: "Step IT Academy",
-    year: "2023",
+    year: "2024",
     image: `${BASE}certificates/diplomastep.png`,
     link: `${BASE}certificates/diplomastep.png`,
   },
