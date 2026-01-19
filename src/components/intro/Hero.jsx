@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import me from "../../photo/gbt.jpeg";
+import me from "../../photo/super1.png";
 
 export default function Hero() {
   return (
@@ -92,7 +92,7 @@ export default function Hero() {
               loading="eager"
               className="
                 w-full object-cover
-                h-[280px] xs:h-[320px] sm:h-[380px] md:h-[420px]
+                h-[280px] xs:h-[320px] sm:h-[380px] md:h-[420px] object-[center_20%]
               "
             />
           </div>
