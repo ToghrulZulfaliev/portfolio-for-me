@@ -1,5 +1,7 @@
 import ddwImg from "../photo/ddw.png";
 import kanbanImg from "../photo/kanban.png";
+import wizardImg from "../photo/wizard.png";
+import teacherImg from "../photo/teacher.jpg";
 
 
 export const projects = [
@@ -34,14 +36,37 @@ export const projects = [
   },
 
   {
-    id: 3,
-    title: "Easy Buy — E-commerce",
-    description:
-      "E-commerce UI with product listing, cart flow, and responsive layout. Built for real-life shopping experience.",
-    tags: ["React", "Redux Toolkit", "Tailwind", "API"],
-    image:
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1400&q=80", // bu qalır ✅
-    live: "https://example.com",
-    github: "https://github.com/ToghrulZulfaliev",
-  },
+  id: 4,
+  title: "Booking Wizard ",
+  description:
+    "Multi-step appointment booking flow with smooth UX and responsive design.",
+  tags: ["React", "Redux Toolkit", "Tailwind", ],
+  image: wizardImg  ,
+  problem:
+  "Tracking tasks across different tools makes priorities unclear and slows down team productivity.",
+
+solution:
+  "Built a visual Kanban board with drag-and-drop functionality to organize tasks clearly and manage workflow efficiently.",
+
+  live: "https://booking-wizard-lake.vercel.app",
+  github: "https://github.com/ToghrulZulfaliev/booking-wizard",
+},
+{
+  id: 5,
+  title: "Teacher Panel — Question Editor",
+  problem:
+  "Creating exam questions with plain inputs makes formatting, formulas, and images difficult to manage.",
+
+solution:
+  "Built a teacher panel with rich text editor, math formula support, and inline image handling for structured question creation.",
+
+  description:
+    "Teacher dashboard for creating exam questions with rich text editor, math formulas, and image support.",
+  tags: ["React", "Rich Text Editor", "Math Formula", ],
+  image: teacherImg  ,
+  live: "https://teacher-panel-question-editor.vercel.app",
+  github: "https://github.com/ToghrulZulfaliev/teacher-panel-question-editor",
+},
+
+
 ];

@@ -46,8 +46,10 @@ export default function Hero() {
             className="mt-3 sm:mt-4 mx-auto md:mx-0 max-w-xl text-sm sm:text-lg leading-relaxed
             text-zinc-600 dark:text-zinc-400"
           >
-            Experienced in React, Redux Toolkit, Tailwind CSS, and modern front-end
-            workflows for production applications.
+            Building scalable, high-performance React applications with clean UI and smooth user experience.
+            Available for remote Front-End roles and freelance projects.
+
+
           </motion.p>
 
           <motion.div

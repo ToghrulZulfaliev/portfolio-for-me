@@ -17,4 +17,13 @@ export const certificates = [
     image: `${BASE}certificates/diplomastep.png`,
     link: `${BASE}certificates/diplomastep.png`,
   },
+  {
+  id: 3,
+  title: "TypeScript Certificate",
+  platform: "Udemy",
+  year: "2025",
+  image: `${BASE}certificates/tsss.png`,
+  link: "https://ude.my/UC-1760f877-3ad7-4bdf-b81a-275b79537ba9"
+},
+
 ];

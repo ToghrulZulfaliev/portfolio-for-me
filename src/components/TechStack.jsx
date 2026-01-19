@@ -1,19 +1,32 @@
 import { motion } from "framer-motion";
 
 const stack = [
-  "React",
-  "Redux Toolkit",
+  
+  "HTML5",
+  "CSS3",
+  "Tailwind CSS",
+  "Bootstrap",
+  "Material UI",
   "JavaScript (ES6+)",
+  "React",
+  "React Hooks",
+  "Redux Toolkit",
+  "Vite",
   "Axios",
   "REST API Integration",
+  "Async/Await",
   "Formik & Yup",
-  "Tailwind CSS",
   "Framer Motion",
   "EmailJS",
-  "Git & GitHub",
+  "LocalStorage",
+  "Lazy Loading",
+  "SPA Architecture",
+  "Component-Based Architecture",
   "Responsive Design",
   "UI/UX Principles",
-  "SaaS",
+  "Git & GitHub"
+
+
 ];
 
 export default function TechStack() {
