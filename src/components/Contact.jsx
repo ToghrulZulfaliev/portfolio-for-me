@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 const isValidEmail = (email) =>
   /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(String(email).trim());
@@ -172,43 +177,49 @@ export default function Contact() {
           </button>
         </form>
 
-        {/* Socials */}
-        <div className="mt-8 sm:mt-10 flex items-center justify-center md:justify-start gap-3 sm:gap-4">
+        {/* Socials + WhatsApp */}
+        <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center md:justify-start gap-3 sm:gap-4">
+          {/* GitHub */}
           <a
             href="https://github.com/ToghrulZulfaliev"
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border
-            border-zinc-200 bg-white/70 text-zinc-600 shadow-sm
-            hover:text-zinc-900 hover:-translate-y-0.5 transition
-            dark:border-zinc-800 dark:bg-zinc-950/50 dark:text-zinc-300 dark:hover:text-white"
+            className="social-btn"
           >
-            <FaGithub className="text-xl" />
+            <FaGithub />
           </a>
 
+          {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/in/toghrul-zulfaliyev/"
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border
-            border-zinc-200 bg-white/70 text-zinc-600 shadow-sm
-            hover:-translate-y-0.5 transition
-            dark:border-zinc-800 dark:bg-zinc-950/50 dark:text-zinc-300"
+            className="social-btn"
           >
-            <FaLinkedin className="text-xl hover:text-[#0A66C2]" />
+            <FaLinkedin className="hover:text-[#0A66C2]" />
           </a>
 
+          {/* Email */}
           <a
             href="mailto:toghrulzulfaliev8@gmail.com"
             aria-label="Email"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border
-            border-zinc-200 bg-white/70 text-zinc-600 shadow-sm
-            hover:text-emerald-500 hover:-translate-y-0.5 transition
-            dark:border-zinc-800 dark:bg-zinc-950/50 dark:text-zinc-300"
+            className="social-btn"
           >
-            <FaEnvelope className="text-xl" />
+            <FaEnvelope className="hover:text-emerald-500" />
+          </a>
+
+          {/* WhatsApp */}
+          <a
+            href="https://wa.me/994507772288?text=Hello%20Toghrul,%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20remote%20Front-End%20opportunity."
+            target="_blank"
+            rel="noreferrer"
+            aria-label="WhatsApp"
+            title="Chat on WhatsApp"
+            className="social-btn"
+          >
+            <FaWhatsapp className="hover:text-green-500" />
           </a>
         </div>
       </motion.div>
