@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { track } from "../utils/analytics";
 
 export default function CTA() {
-  const CV_URL = "/cv/Toghrul Zulfaliyev - en son.pdf";
-  const CV_PAGES = 2;
+  const CV_URL = "/cv/Toghrul Zulfaliyev - CV.pdf";
+  const CV_PAGES = 1;
 
   return (
     <section className="mx-auto max-w-6xl px-4 pb-12 sm:pb-16 md:pb-20">
