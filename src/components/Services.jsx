@@ -17,22 +17,28 @@ const items = [
 
 export default function Services() {
   return (
-    <section id="services" className="mx-auto max-w-6xl px-4 py-16 sm:py-20 md:py-24">
+    <section
+      id="services"
+      className="mx-auto max-w-6xl px-4 py-14 sm:py-16 md:py-20"
+    >
       <motion.div
         initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.25 }}
-        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.55 }}
       >
-        <h2 className="text-2xl sm:text-3xl font-bold leading-tight">
-          My Core Skills
-        </h2>
+        <div className="text-center lg:text-left">
+          <h2 className="text-2xl sm:text-3xl font-bold leading-tight text-zinc-900 dark:text-zinc-100">
+            My Core Skills
+          </h2>
 
-        <p className="mt-3 max-w-2xl text-sm sm:text-base text-zinc-600 dark:text-zinc-400">
-          For teams and clients: fast delivery, clean UI, and maintainable React code.
-        </p>
+          <p className="mt-3 max-w-2xl mx-auto lg:mx-0 text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            For teams and clients: fast delivery, clean UI, and maintainable
+            React code.
+          </p>
+        </div>
 
-        <div className="mt-8 sm:mt-10 grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        <div className="mt-8 sm:mt-10 grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((it) => (
             <motion.div
               key={it.title}
@@ -41,11 +47,11 @@ export default function Services() {
               className="h-full rounded-3xl border p-5 sm:p-6
               border-zinc-200 dark:border-zinc-800
               bg-white/60 dark:bg-zinc-900/50 backdrop-blur
-              hover:border-indigo-400/60 dark:hover:border-indigo-400/40
-              hover:bg-white/80 dark:hover:bg-zinc-900/60
+              md:hover:border-indigo-400/60 md:dark:hover:border-indigo-400/40
+              md:hover:bg-white/80 md:dark:hover:bg-zinc-900/60
               transition"
             >
-              <h3 className="text-base sm:text-lg font-semibold">
+              <h3 className="text-base sm:text-lg font-semibold text-zinc-900 dark:text-zinc-100">
                 {it.title}
               </h3>
 

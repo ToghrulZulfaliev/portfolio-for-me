@@ -3,13 +3,16 @@ import { motion } from "framer-motion";
 
 export default function Certificates() {
   return (
-    <section id="certificates" className="max-w-6xl mx-auto px-4 py-20">
+    <section
+      id="certificates"
+      className="mx-auto max-w-6xl px-4 py-14 sm:py-16 md:py-20"
+    >
       <motion.h2
         initial={{ opacity: 0, y: 14 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.5 }}
-        className="text-3xl font-bold mb-10 text-center"
+        className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-10 text-center text-zinc-900 dark:text-zinc-100"
       >
         Certificates
       </motion.h2>
@@ -20,11 +23,9 @@ export default function Certificates() {
         viewport={{ once: true, amount: 0.2 }}
         variants={{
           hidden: {},
-          show: {
-            transition: { staggerChildren: 0.08 },
-          },
+          show: { transition: { staggerChildren: 0.08 } },
         }}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
       >
         {certificates.map((cert) => (
           <motion.div
@@ -35,34 +36,34 @@ export default function Certificates() {
             }}
             transition={{ duration: 0.4 }}
             whileHover={{ y: -6 }}
-            className="group relative rounded-3xl overflow-hidden"
+            className="group relative rounded-3xl overflow-hidden md:hover:-translate-y-1"
           >
-            {/* ✅ Gradient Border Layer (CTA style) */}
+            {/* Gradient Border */}
             <div
               className="
                 absolute inset-0 rounded-3xl p-[1px]
                 bg-gradient-to-r from-indigo-500/30 via-emerald-400/20 to-pink-500/30
-                opacity-40 group-hover:opacity-100
+                opacity-40 md:group-hover:opacity-100
                 transition
               "
             />
 
-            {/* ✅ Glass Card */}
+            {/* Glass Card */}
             <div
               className="
-                relative rounded-3xl p-4
+                relative rounded-3xl p-4 sm:p-5
                 bg-white/70 dark:bg-zinc-950/60
                 backdrop-blur-xl
                 border border-zinc-200/60 dark:border-zinc-800/60
-                shadow-sm group-hover:shadow-xl
+                shadow-sm md:group-hover:shadow-xl
                 transition
               "
             >
-              {/* ✅ Glow hover effect */}
+              {/* Glow hover effect (yalnız md+) */}
               <div
                 className="
                   pointer-events-none absolute -inset-10
-                  opacity-0 group-hover:opacity-100
+                  opacity-0 md:group-hover:opacity-100
                   bg-gradient-to-r from-indigo-500/15 via-emerald-400/10 to-pink-500/15
                   blur-2xl transition
                 "
@@ -73,18 +74,19 @@ export default function Certificates() {
                 alt={cert.title}
                 loading="lazy"
                 className="
-                  relative rounded-2xl mb-4 w-full h-44 object-cover
+                  relative rounded-2xl mb-4 w-full object-cover
+                  h-40 sm:h-44
                   ring-1 ring-zinc-200/50 dark:ring-zinc-800/50
-                  group-hover:ring-indigo-500/30
+                  md:group-hover:ring-indigo-500/30
                   transition
                 "
               />
 
-              <h3 className="relative font-semibold text-lg">
+              <h3 className="relative font-semibold text-base sm:text-lg text-zinc-900 dark:text-zinc-100">
                 {cert.title}
               </h3>
 
-              <p className="relative text-sm text-gray-500 dark:text-zinc-400">
+              <p className="relative text-sm text-zinc-500 dark:text-zinc-400">
                 {cert.platform} — {cert.year}
               </p>
 
@@ -100,6 +102,7 @@ export default function Certificates() {
                   bg-white/70 dark:bg-zinc-950/60
                   backdrop-blur-xl
                   hover:border-indigo-400/70 dark:hover:border-indigo-500/60
+                  active:scale-[0.99]
                   transition
                 "
               >
