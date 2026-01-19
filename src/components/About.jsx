@@ -2,15 +2,29 @@ import { motion } from "framer-motion";
 
 export default function About() {
   const skills = [
-    "React",
-    "JavaScript (ES6+)",
-    "Redux Toolkit",
-    "Axios & REST APIs",
-    "Tailwind CSS",
-    "Form Handling (Formik / React Hook Form)",
-    "Responsive Layouts",
-    "Git & GitHub",
-    "Basic UI Animations",
+    "HTML5",
+  "CSS3",
+  "Tailwind CSS",
+  "Bootstrap",
+  "Material UI",
+  "JavaScript (ES6+)",
+  "React",
+  "React Hooks",
+  "Redux Toolkit",
+  "Vite",
+  "Axios",
+  "REST API Integration",
+  "Async/Await",
+  "Formik & Yup",
+  "Framer Motion",
+  "EmailJS",
+  "LocalStorage",
+  "Lazy Loading",
+  "SPA Architecture",
+  "Component-Based Architecture",
+  "Responsive Design",
+  "UI/UX Principles",
+  "Git & GitHub"
   ];
 
   return (
