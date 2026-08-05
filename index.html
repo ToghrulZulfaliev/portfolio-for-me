@@ -3,60 +3,175 @@
   <head>
     <meta charset="UTF-8" />
 
-    <!-- ✅ MOBIL RESPONSIVE üçün ƏN VACİB -->
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
 
-    <title>Toghrul Zulfaliyev | Front-End Developer (React)</title>
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="color-scheme"
+      content="light dark"
+    />
+
+    <title>
+      Toghrul Zulfaliyev | QA Engineer & Frontend Developer
+    </title>
 
     <meta
       name="description"
-      content="Front-End Developer specializing in React, Redux Toolkit, and modern UI/UX. Clean interfaces, smooth animations, and scalable web apps."
+      content="QA Engineer specializing in Manual Testing, API Testing and Automation QA with Java, Selenium, Postman, Swagger and Rest Assured. Frontend development experience with React and modern web technologies."
     />
+
+    <meta
+      name="keywords"
+      content="Toghrul Zulfaliyev, QA Engineer, Software Tester, Manual QA, API Testing, Automation QA, Java, Selenium, Rest Assured, Postman, Swagger, React Developer, Azerbaijan"
+    />
+
+    <meta name="author" content="Toghrul Zulfaliyev" />
     <meta name="robots" content="index, follow" />
 
-    <!-- ✅ favicon: Vite-də ən sağlam yol public-dan verməkdir -->
-    <!-- public/favicon.png kimi saxla -->
-    <link rel="icon" type="image/png" href="./src/photo/download.jpg" />
+    <link
+      rel="canonical"
+      href="https://togrulzulfaliyev.com/"
+    />
+
+    <!--
+      Favicon faylını bu qovluğa yerləşdir:
+      public/favicon.png
+    -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon.png"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      href="/favicon.png"
+    />
 
     <!-- Open Graph -->
     <meta
       property="og:title"
-      content="Toghrul Zulfaliyev | Front-End Developer (React)"
+      content="Toghrul Zulfaliyev | QA Engineer & Frontend Developer"
     />
+
     <meta
       property="og:description"
-      content="Modern, responsive React apps with clean UI and smooth UX."
+      content="QA Engineer focused on Manual Testing, API Testing and Automation QA. Explore my testing experience, technical skills, projects and certifications."
     />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/og.png" />
-    <meta property="og:url" content="https://togrulzufaliev.com" />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      property="og:type"
+      content="website"
+    />
+
+    <meta
+      property="og:url"
+      content="https://togrulzulfaliyev.com/"
+    />
+
+    <!--
+      Şəkli bu qovluğa yerləşdir:
+      public/og-image.png
+    -->
+    <meta
+      property="og:image"
+      content="https://togrulzulfaliyev.com/og-image.png"
+    />
+
+    <meta
+      property="og:image:alt"
+      content="Toghrul Zulfaliyev QA Engineer Portfolio"
+    />
+
+    <meta
+      property="og:site_name"
+      content="Toghrul Zulfaliyev Portfolio"
+    />
+
+    <meta
+      property="og:locale"
+      content="en_US"
+    />
+
+    <!-- Twitter / X -->
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+
     <meta
       name="twitter:title"
-      content="Toghrul Zulfaliyev | Front-End Developer (React)"
+      content="Toghrul Zulfaliyev | QA Engineer & Frontend Developer"
     />
+
     <meta
       name="twitter:description"
-      content="Modern, responsive React apps with clean UI and smooth UX."
+      content="QA Engineer focused on Manual Testing, API Testing and Automation QA with additional React frontend development experience."
     />
-    <meta name="twitter:image" content="/og.png" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7625JL3G09"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-7625JL3G09');
-</script>
+    <meta
+      name="twitter:image"
+      content="https://togrulzulfaliyev.com/og-image.png"
+    />
+
+    <!-- Dark mode açılarkən ağ ekran parlamasının qarşısını alır -->
+    <script>
+      try {
+        const savedTheme = localStorage.getItem("theme");
+
+        const systemPrefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+
+        const theme =
+          savedTheme === "dark" || savedTheme === "light"
+            ? savedTheme
+            : systemPrefersDark
+              ? "dark"
+              : "light";
+
+        document.documentElement.classList.toggle(
+          "dark",
+          theme === "dark"
+        );
+
+        document.documentElement.style.colorScheme = theme;
+      } catch (error) {
+        console.error("Theme initialization error:", error);
+      }
+    </script>
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-7625JL3G09"
+    ></script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+      gtag("config", "G-7625JL3G09");
+    </script>
+  </head>
+
+  <body>
+    <noscript>
+      You need to enable JavaScript to view Toghrul Zulfaliyev's portfolio.
+    </noscript>
+
+    <div id="root"></div>
+
+    <script
+      type="module"
+      src="/src/main.jsx"
+    ></script>
   </body>
 </html>
