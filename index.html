@@ -8,27 +8,23 @@
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
 
-    <meta name="theme-color" content="#ffffff" />
-    <meta
-      name="color-scheme"
-      content="light dark"
-    />
+    <meta name="theme-color" content="#4f46e5" />
+    <meta name="color-scheme" content="light dark" />
 
-    <title>
-      Toghrul Zulfaliyev | QA Engineer & Frontend Developer
-    </title>
+    <title>Toghrul Zulfaliyev | QA Engineer & Frontend Developer</title>
 
     <meta
       name="description"
-      content="QA Engineer specializing in Manual Testing, API Testing and Automation QA with Java, Selenium, Postman, Swagger and Rest Assured. Frontend development experience with React and modern web technologies."
+      content="QA Engineer specializing in Manual Testing, API Testing and Automation QA with Java, Selenium, Postman, Swagger and Rest Assured. Frontend development experience with React."
     />
 
     <meta
       name="keywords"
-      content="Toghrul Zulfaliyev, QA Engineer, Software Tester, Manual QA, API Testing, Automation QA, Java, Selenium, Rest Assured, Postman, Swagger, React Developer, Azerbaijan"
+      content="QA Engineer, Manual Testing, Automation QA, API Testing, Selenium, Java, Postman, Swagger, Rest Assured, React, Frontend Developer, Toghrul Zulfaliyev"
     />
 
     <meta name="author" content="Toghrul Zulfaliyev" />
+
     <meta name="robots" content="index, follow" />
 
     <link
@@ -36,10 +32,7 @@
       href="https://togrulzulfaliyev.com/"
     />
 
-    <!--
-      Favicon faylını bu qovluğa yerləşdir:
-      public/favicon.png
-    -->
+    <!-- Favicon -->
     <link
       rel="icon"
       type="image/png"
@@ -59,7 +52,7 @@
 
     <meta
       property="og:description"
-      content="QA Engineer focused on Manual Testing, API Testing and Automation QA. Explore my testing experience, technical skills, projects and certifications."
+      content="QA Engineer specializing in Manual Testing, API Testing and Automation QA. Explore my projects, technical skills, certifications and portfolio."
     />
 
     <meta
@@ -72,13 +65,19 @@
       content="https://togrulzulfaliyev.com/"
     />
 
-    <!--
-      Şəkli bu qovluğa yerləşdir:
-      public/og-image.png
-    -->
     <meta
       property="og:image"
       content="https://togrulzulfaliyev.com/og-image.png"
+    />
+
+    <meta
+      property="og:image:width"
+      content="1200"
+    />
+
+    <meta
+      property="og:image:height"
+      content="630"
     />
 
     <meta
@@ -96,7 +95,8 @@
       content="en_US"
     />
 
-    <!-- Twitter / X -->
+    <!-- Twitter -->
+
     <meta
       name="twitter:card"
       content="summary_large_image"
@@ -109,7 +109,7 @@
 
     <meta
       name="twitter:description"
-      content="QA Engineer focused on Manual Testing, API Testing and Automation QA with additional React frontend development experience."
+      content="QA Engineer specializing in Manual Testing, API Testing and Automation QA."
     />
 
     <meta
@@ -117,34 +117,38 @@
       content="https://togrulzulfaliyev.com/og-image.png"
     />
 
-    <!-- Dark mode açılarkən ağ ekran parlamasının qarşısını alır -->
+    <!-- Theme -->
+
     <script>
-      try {
-        const savedTheme = localStorage.getItem("theme");
+      (() => {
+        try {
+          const saved = localStorage.getItem("theme");
 
-        const systemPrefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
+          const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches;
 
-        const theme =
-          savedTheme === "dark" || savedTheme === "light"
-            ? savedTheme
-            : systemPrefersDark
+          const theme =
+            saved === "dark" || saved === "light"
+              ? saved
+              : prefersDark
               ? "dark"
               : "light";
 
-        document.documentElement.classList.toggle(
-          "dark",
-          theme === "dark"
-        );
+          document.documentElement.classList.toggle(
+            "dark",
+            theme === "dark"
+          );
 
-        document.documentElement.style.colorScheme = theme;
-      } catch (error) {
-        console.error("Theme initialization error:", error);
-      }
+          document.documentElement.style.colorScheme = theme;
+        } catch (e) {
+          console.error(e);
+        }
+      })();
     </script>
 
     <!-- Google Analytics -->
+
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-7625JL3G09"
@@ -154,17 +158,18 @@
       window.dataLayer = window.dataLayer || [];
 
       function gtag() {
-        window.dataLayer.push(arguments);
+        dataLayer.push(arguments);
       }
 
       gtag("js", new Date());
+
       gtag("config", "G-7625JL3G09");
     </script>
   </head>
 
   <body>
     <noscript>
-      You need to enable JavaScript to view Toghrul Zulfaliyev's portfolio.
+      You need to enable JavaScript to view this portfolio.
     </noscript>
 
     <div id="root"></div>
